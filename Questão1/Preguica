@@ -1,0 +1,16 @@
+public class Preguiça extends Animal {
+
+    public Preguiça(String nome, int idade) {
+        super(nome, idade);
+    }
+
+    @Override
+    public void emitirSom() {
+        System.out.println(getNome() + " está fazendo som característico de preguiça!");
+    }
+
+    @Override
+    public void acaoEspecial() {
+        System.out.println(getNome() + " está subindo em árvores!");
+    }
+}
