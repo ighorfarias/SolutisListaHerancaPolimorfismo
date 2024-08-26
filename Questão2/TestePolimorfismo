@@ -1,0 +1,13 @@
+public class TestePolimorfismo {
+    public static void main(String[] args) {
+        Animal cachorro = new Cachorro("Rex", 5);
+        Animal cavalo = new Cavalo("Pé de Pano", 7);
+        Animal preguiça = new Preguiça("Sid", 3);
+
+        Animal[] animais = {cachorro, cavalo, preguiça};
+
+        for (Animal animal : animais) {
+            animal.emitirSom();  // Chama o método específico de cada subclasse
+        }
+    }
+}
