@@ -1,0 +1,12 @@
+public abstract class FuncionarioComissionado extends Funcionario {
+    public FuncionarioComissionado(String nome, String codigoFuncional) {
+        super(nome, codigoFuncional);
+    }
+
+    public abstract double getComissao();
+
+    @Override
+    public double calcularRenda() {
+        return super.calcularRenda() + getComissao();
+    }
+}
