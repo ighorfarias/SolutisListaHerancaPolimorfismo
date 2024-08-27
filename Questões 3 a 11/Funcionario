@@ -2,6 +2,7 @@ public class Funcionario {
     private String nome;
     private String codigoFuncional;
     private double rendaBasica = 1000.00;
+    private double comissao = 0.00;
 
 
     public Funcionario(String nome, String codigoFuncional) {
@@ -27,6 +28,12 @@ public class Funcionario {
     public double getRendaBasica() {
         return rendaBasica;
     }
+    public double getComissao() {
+        return comissao;
+    }
+     public void setComissao(double comissao) {
+        this.comissao = comissao;
+    }
 
     public void exibirInformacoes() {
         System.out.println("Nome: " + nome);
@@ -34,7 +41,7 @@ public class Funcionario {
         System.out.println("Renda Total: R$ " + calcularRenda());
     }
     public double calcularRenda() {
-        return rendaBasica;
-
+        return rendaBasica + comissao;
     }
+
 }
