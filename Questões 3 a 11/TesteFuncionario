@@ -1,0 +1,21 @@
+public class TesteFuncionario {
+    public static void main(String[] args) {
+        Funcionario funcionario1 = new Funcionario("Carlos Silva", "001");
+        funcionario1.exibirInformacoes();
+
+        System.out.println();
+
+        FuncionarioEnsinoBasico funcionario2 = new FuncionarioEnsinoBasico("Ana Souza", "002", "Escola Municipal ABC");
+        funcionario2.exibirInformacoes();
+
+        System.out.println();
+
+        FuncionarioEnsinoMedio funcionario3 = new FuncionarioEnsinoMedio("João Pereira", "003", "Escola Municipal ABC", "Colégio Estadual XYZ");
+        funcionario3.exibirInformacoes();
+
+        System.out.println();
+
+        FuncionarioGraduado funcionario4 = new FuncionarioGraduado("Maria Oliveira", "004", "Escola Municipal ABC", "Colégio Estadual XYZ", "Universidade Federal de Exemplo");
+        funcionario4.exibirInformacoes();
+    }
+}
