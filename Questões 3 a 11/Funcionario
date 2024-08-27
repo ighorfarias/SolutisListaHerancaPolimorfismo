@@ -2,7 +2,6 @@ public class Funcionario {
     private String nome;
     private String codigoFuncional;
     private double rendaBasica = 1000.00;
-    private double comissao = 0.00;
 
 
     public Funcionario(String nome, String codigoFuncional) {
@@ -25,23 +24,26 @@ public class Funcionario {
     public void setCodigoFuncional(String codigoFuncional) {
         this.codigoFuncional = codigoFuncional;
     }
-    public double getRendaBasica() {
-        return rendaBasica;
+    public double getSalarioBase() {
+        return salarioBase;
     }
+
     public double getComissao() {
-        return comissao;
+        return 0.0; 
     }
-     public void setComissao(double comissao) {
-        this.comissao = comissao;
+
+    // Método para calcular a renda total (a ser sobrescrito)
+    public double calcularRenda() {
+        return salarioBase;
     }
 
     public void exibirInformacoes() {
-        System.out.println("Nome: " + nome);
-        System.out.println("Código Funcional: " + codigoFuncional);
-        System.out.println("Renda Total: R$ " + calcularRenda());
+        System.out.println(this);
     }
-    public double calcularRenda() {
-        return rendaBasica + comissao;
+
+    @Override
+    public String toString() {
+        return String.format("Nome: %s, Comissão: R$ %.2f, Salário Total: R$ %.2f", nome, getComissao(), calcularRenda());
     }
 
 }
