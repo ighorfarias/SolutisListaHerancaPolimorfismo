@@ -1,0 +1,20 @@
+public class TesteComissoes {
+    public static void main(String[] args) {
+        FuncionarioComissionado gerente = new Gerente("Carlos Silva", "001");
+        FuncionarioComissionado supervisor = new Supervisor("Ana Souza", "002");
+        FuncionarioComissionado vendedor = new VendedorComissionado("João Pereira", "003");
+
+        gerente.exibirInformacoes();
+        System.out.println("Salário com Comissão: R$ " + gerente.calcularRenda());
+
+        System.out.println();
+
+        supervisor.exibirInformacoes();
+        System.out.println("Salário com Comissão: R$ " + supervisor.calcularRenda());
+
+        System.out.println();
+
+        vendedor.exibirInformacoes();
+        System.out.println("Salário com Comissão: R$ " + vendedor.calcularRenda());
+    }
+}
