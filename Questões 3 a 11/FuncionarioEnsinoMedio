@@ -19,4 +19,8 @@ public class FuncionarioEnsinoMedio extends FuncionarioEnsinoBasico {
         super.exibirInformacoes();
         System.out.println("Escola de Ensino Médio: " + escolaEnsinoMedio);
     }
+    @Override
+    public double calcularRenda() {
+        return super.calcularRenda() * 1.50;  // Acrescenta 50% à renda do nível anterior
+    }
 }
