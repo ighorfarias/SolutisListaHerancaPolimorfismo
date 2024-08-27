@@ -1,0 +1,11 @@
+public class VendedorComissionado extends FuncionarioComissionado {
+    private static final double COMISSAO_VENDEDOR = 250.00;
+
+    public VendedorComissionado(String nome, String codigoFuncional) {
+        super(nome, codigoFuncional);
+    }
+    @Override
+    public double getComissao() {
+        return COMISSAO_VENDEDOR;
+    }
+}
