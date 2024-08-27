@@ -21,4 +21,7 @@ public class FuncionarioGraduado extends FuncionarioEnsinoMedio {
         super.exibirInformacoes();
         System.out.println("Universidade: " + universidade);
     }
+     public double calcularRenda() {
+        return super.calcularRenda() * 2.00;  // Acrescenta 100% à renda do nível anterior
+    }
 }
