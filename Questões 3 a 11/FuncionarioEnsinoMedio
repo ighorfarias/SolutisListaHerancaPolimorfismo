@@ -1,0 +1,22 @@
+public class FuncionarioEnsinoMedio extends FuncionarioEnsinoBasico {
+    private String escolaEnsinoMedio;
+
+    public FuncionarioEnsinoMedio(String nome, String codigoFuncional, String escolaEnsinoBasico, String escolaEnsinoMedio) {
+        super(nome, codigoFuncional, escolaEnsinoBasico);
+        this.escolaEnsinoMedio = escolaEnsinoMedio;
+    }
+
+    public String getEscolaEnsinoMedio() {
+        return escolaEnsinoMedio;
+    }
+
+    public void setEscolaEnsinoMedio(String escolaEnsinoMedio) {
+        this.escolaEnsinoMedio = escolaEnsinoMedio;
+    }
+
+    @Override
+    public void exibirInformacoes() {
+        super.exibirInformacoes();
+        System.out.println("Escola de Ensino Médio: " + escolaEnsinoMedio);
+    }
+}
