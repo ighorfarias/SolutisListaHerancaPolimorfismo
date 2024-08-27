@@ -1,0 +1,44 @@
+public class EmpresaC {
+    public static void main(String[] args) {
+        Funcionario[] funcionarios = new Funcionario[10];
+        funcionarios[0] = new Gerente("Carlos Silva", "001");
+
+        funcionarios[1] = new Supervisor("Ana Souza", "002");
+        funcionarios[2] = new Supervisor("José Lima", "003");
+
+        funcionarios[3] = new Vendedor("João Pereira", "004");
+        funcionarios[4] = new Vendedor("Maria Oliveira", "005");
+        funcionarios[5] = new Vendedor("Marcos Silva", "006");
+        funcionarios[6] = new Vendedor("Paula Costa", "007");
+        funcionarios[7] = new Vendedor("Rita Santos", "008");
+        funcionarios[8] = new Vendedor("Lucas Martins", "009");
+        funcionarios[9] = new Vendedor("Fernanda Rodrigues", "010");
+
+        double totalSalarios = 0;
+        double totalGerente = 0;
+        double totalSupervisor = 0;
+        double totalVendedor = 0;
+
+        for (Funcionario funcionario : funcionarios) {
+            double salario = funcionario.calcularRenda();
+            totalSalarios += salario;
+
+            if (funcionario instanceof Gerente) {
+                totalGerente += salario;
+            } else if (funcionario instanceof Supervisor) {
+                totalSupervisor += salario;
+            } else if (funcionario instanceof Vendedor) {
+                totalVendedor += salario;
+            }
+
+            funcionario.exibirInformacoes();
+            System.out.println();
+        }
+
+        // Exibindo os resultados dos custos totais
+        System.out.printf("Custo total com salários: R$ %.2f%n", totalSalarios);
+        System.out.printf("Custo total com Gerentes: R$ %.2f%n", totalGerente);
+        System.out.printf("Custo total com Supervisores: R$ %.2f%n", totalSupervisor);
+        System.out.printf("Custo total com Vendedores: R$ %.2f%n", totalVendedor);
+    }
+}
