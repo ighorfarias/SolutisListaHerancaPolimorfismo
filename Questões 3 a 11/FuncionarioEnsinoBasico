@@ -19,4 +19,8 @@ public class FuncionarioEnsinoBasico extends Funcionario {
         super.exibirInformacoes();
         System.out.println("Escola de Ensino Básico: " + escolaEnsinoBasico);
     }
+    @Override
+    public double calcularRenda() {
+        return super.calcularRenda() * 1.10;  // Acrescenta 10% à renda básica
+    }
 }
