@@ -1,0 +1,42 @@
+public class Empresa {
+    public static void main(String[] args) {
+        Funcionario[] funcionarios = new Funcionario[10];
+
+        funcionarios[0] = new FuncionarioEnsinoBasico("Ana Souza", "001", "Escola Municipal ABC");
+        funcionarios[1] = new FuncionarioEnsinoBasico("Carlos Silva", "002", "Escola Municipal ABC");
+        funcionarios[2] = new FuncionarioEnsinoBasico("João Pereira", "003", "Escola Municipal XYZ");
+        funcionarios[3] = new FuncionarioEnsinoBasico("Maria Oliveira", "004", "Escola Municipal XYZ");
+
+        funcionarios[4] = new FuncionarioEnsinoMedio("José Lima", "005", "Escola Municipal ABC", "Colégio Estadual XYZ");
+        funcionarios[5] = new FuncionarioEnsinoMedio("Paula Costa", "006", "Escola Municipal ABC", "Colégio Estadual ABC");
+        funcionarios[6] = new FuncionarioEnsinoMedio("Marcos Silva", "007", "Escola Municipal XYZ", "Colégio Estadual XYZ");
+        funcionarios[7] = new FuncionarioEnsinoMedio("Rita Santos", "008", "Escola Municipal XYZ", "Colégio Estadual ABC");
+
+        funcionarios[8] = new FuncionarioGraduado("Lucas Martins", "009", "Escola Municipal ABC", "Colégio Estadual XYZ", "Universidade Federal de Exemplo");
+        funcionarios[9] = new FuncionarioGraduado("Fernanda Rodrigues", "010", "Escola Municipal ABC", "Colégio Estadual ABC", "Universidade Estadual de Exemplo");
+
+
+        double totalSalarios = 0;
+        double totalBasico = 0;
+        double totalMedio = 0;
+        double totalSuperior = 0;
+
+        for (Funcionario funcionario : funcionarios) {
+            double salario = funcionario.calcularRenda();
+            totalSalarios += salario;
+
+            if (funcionario instanceof FuncionarioGraduado) {
+                totalSuperior += salario;
+            } else if (funcionario instanceof FuncionarioEnsinoMedio) {
+                totalMedio += salario;
+            } else if (funcionario instanceof FuncionarioEnsinoBasico) {
+                totalBasico += salario;
+            }
+        }
+
+        System.out.println("Custo total com salários: R$ " + totalSalarios);
+        System.out.println("Custo total com funcionários de ensino básico: R$ " + totalBasico);
+        System.out.println("Custo total com funcionários de ensino médio: R$ " + totalMedio);
+        System.out.println("Custo total com funcionários de nível superior: R$ " + totalSuperior);
+    }
+}
